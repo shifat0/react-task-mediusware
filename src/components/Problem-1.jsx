@@ -125,8 +125,8 @@ const Problem1 = () => {
                   .filter((el) => el.status !== "")
                   .map((el, idx) => (
                     <tr key={idx}>
-                      <th scope="col">{el?.name}</th>
-                      <th scope="col">{el?.status}</th>
+                      <td scope="col">{el?.name}</td>
+                      <td scope="col">{el?.status}</td>
                     </tr>
                   ))}
 
@@ -136,8 +136,8 @@ const Problem1 = () => {
                   ?.filter((el) => el.status.toLowerCase().trim() === "active")
                   .map((el, idx) => (
                     <tr key={idx}>
-                      <th scope="col">{el?.name}</th>
-                      <th scope="col">{el?.status}</th>
+                      <td scope="col">{el?.name}</td>
+                      <td scope="col">{el?.status}</td>
                     </tr>
                   ))}
 
@@ -149,8 +149,8 @@ const Problem1 = () => {
                   )
                   .map((el, idx) => (
                     <tr key={idx}>
-                      <th scope="col">{el?.name}</th>
-                      <th scope="col">{el?.status}</th>
+                      <td scope="col">{el?.name}</td>
+                      <td scope="col">{el?.status}</td>
                     </tr>
                   ))}
             </thead>
