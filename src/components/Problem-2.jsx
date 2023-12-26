@@ -5,7 +5,9 @@ import USAContacts from "./USA-Contacts";
 
 const Problem2 = () => {
   const [show, setShow] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const location = useLocation();
+  //   console.log(searchText);
 
   return (
     <div className="container">
@@ -67,16 +69,26 @@ const Problem2 = () => {
                     </button>
                   </Link>
                 </div>
-                <div>
-                  <input type="text" placeholder="Search" className="w-100" />
-                </div>
+                <form onSubmit={(e) => e.preventDefault()}>
+                  <input
+                    type="text"
+                    id="search"
+                    placeholder="Search"
+                    className="w-100"
+                    onChange={(e) =>
+                      setTimeout(() => {
+                        setSearchText(e.target.value);
+                      }, 2000)
+                    }
+                  />
+                </form>
               </div>
 
               <div className="modal-body">
                 {location.pathname.split("/")[2] === "all-contacts" ? (
-                  <AllContacts />
+                  <AllContacts searchText={searchText} />
                 ) : (
-                  <USAContacts />
+                  <USAContacts searchText={searchText} />
                 )}
               </div>
 
